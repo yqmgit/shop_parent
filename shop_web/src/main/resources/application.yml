@@ -1,0 +1,25 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: shop-web
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.43.160:8848
+  thymeleaf:
+    mode: LEGACYHTML5
+    encoding: utf-8
+    cache: false
+    prefix: classpath:/templates/
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+feign:
+  sentinel:
+    enabled: true
+  client:
+    config:
+      default:
+        readTimeout: 30000
+        connecTimeout: 10000
